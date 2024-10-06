@@ -57,7 +57,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="numInput1Error" layoutX="500.0" layoutY="149.0" text="Label" />
-      <Label fx:id="numInput2Error" layoutX="505.0" layoutY="264.0" text="Label" />
+      <Label fx:id="numInput1Error" alignment="CENTER" contentDisplay="CENTER" layoutX="434.0" layoutY="149.0" prefHeight="16.0" prefWidth="171.0" textAlignment="CENTER" />
+      <Label fx:id="numInput2Error" alignment="CENTER" contentDisplay="CENTER" layoutX="437.0" layoutY="257.0" prefHeight="16.0" prefWidth="171.0" textAlignment="CENTER" />
    </children>
 </AnchorPane>
