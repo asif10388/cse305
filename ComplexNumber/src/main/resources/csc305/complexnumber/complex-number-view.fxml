@@ -9,9 +9,9 @@
 
 <AnchorPane prefHeight="659.0" prefWidth="298.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.complexnumber.ComplexNumberOperationsController">
    <children>
-      <AnchorPane prefHeight="659.0" prefWidth="558.0">
+      <AnchorPane prefHeight="659.0" prefWidth="529.0">
          <children>
-            <Label layoutX="56.0" layoutY="14.0" text="Complex Number Operation Visualizer">
+            <Label layoutX="41.0" layoutY="14.0" text="Complex Number Operation Visualizer">
                <font>
                   <Font size="24.0" />
                </font>
@@ -38,7 +38,7 @@
                   <Font name="Noto Sans Bold" size="18.0" />
                </font>
             </Label>
-            <ComboBox fx:id="operationsCombobox" layoutX="278.0" layoutY="288.0" onMouseClicked="#onFocusButtonClicked" prefHeight="25.0" prefWidth="171.0" />
+            <ComboBox fx:id="operationsCombobox" layoutX="287.0" layoutY="285.0" onMouseClicked="#onFocusButtonClicked" prefHeight="25.0" prefWidth="171.0" />
             <Button layoutX="74.0" layoutY="348.0" mnemonicParsing="false" onAction="#onShowResultButtonClick" prefHeight="39.0" prefWidth="161.0" text="Show Result">
                <font>
                   <Font size="18.0" />
@@ -49,7 +49,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="resultLabel" alignment="CENTER" layoutX="74.0" layoutY="436.0" prefHeight="209.0" prefWidth="407.0" style="-fx-background-color: bisque;">
+            <Label fx:id="resultLabel" alignment="CENTER" layoutX="74.0" layoutY="436.0" prefHeight="209.0" prefWidth="394.0" style="-fx-background-color: bisque;">
                <font>
                   <Font size="18.0" />
                </font>
@@ -59,7 +59,7 @@
                   <Font name="Noto Sans Bold" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="278.0" layoutY="348.0" mnemonicParsing="false" onAction="#onClearArrayButtonClick" prefHeight="39.0" prefWidth="171.0" text="Clear Array">
+            <Button layoutX="287.0" layoutY="348.0" mnemonicParsing="false" onAction="#onClearArrayButtonClick" prefHeight="39.0" prefWidth="171.0" text="Clear Array">
                <font>
                   <Font size="18.0" />
                </font>
