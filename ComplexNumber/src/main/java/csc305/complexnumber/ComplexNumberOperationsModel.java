@@ -23,11 +23,6 @@ public class ComplexNumberOperationsModel {
         return imaginary;
     }
 
-    @Override
-    public String toString() {
-        return "ComplexNumberOperationsModel{" + "real=" + real + ", imaginary=" + imaginary + '}';
-    }
-
     public double[] getRealArray() {
         return realArray;
     }
@@ -42,5 +37,10 @@ public class ComplexNumberOperationsModel {
 
     public void setImaginaryArray(int imaginaryArrayIndex, double imaginaryArrayValue) {
         this.imaginaryArray[imaginaryArrayIndex] = imaginaryArrayValue;
+    }
+
+    @Override
+    public String toString() {
+        return  real + "+" + imaginary + "i";
     }
 }
