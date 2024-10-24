@@ -70,7 +70,7 @@ public class ComplexNumberOperationsController {
         realNumberInputField.clear();
         imaginaryNumberInputField.clear();
 
-        remainingPairLabel.setText(String.valueOf(10 - getCounter()) + " / " + "10" + " Remaining! ");
+        remainingPairLabel.setText(String.valueOf(10 - getCounter()) + "/" + "10" + " Remaining! ");
     }
 
     @javafx.fxml.FXML
@@ -127,7 +127,7 @@ public class ComplexNumberOperationsController {
         clearCounter();
         resultLabel.setText("");
         addToPairArrayStatusLabel.setText("Array cleared!");
-        remainingPairLabel.setText(String.valueOf(getCounter()) + " / " + "10" + " Remaining! ");
+        remainingPairLabel.setText(String.valueOf(10 - getCounter()) + "/" + "10" + " Remaining! ");
     }
 
     @javafx.fxml.FXML
