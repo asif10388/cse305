@@ -49,7 +49,7 @@ public class InternshipController
 
     private ArrayList<InternModel> internArr;
     private ArrayList<TraineeModel> traineeList;
-    private Map<Integer, InternModel> internToTraineeMap;
+    private HashMap<Integer, InternModel> internToTraineeMap;
 
     @javafx.fxml.FXML
     public void initialize() {
