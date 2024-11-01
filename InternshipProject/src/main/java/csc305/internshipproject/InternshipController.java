@@ -1,14 +1,14 @@
 package csc305.internshipproject;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.event.ActionEvent;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.ArrayList;
-import java.util.Optional;
+import java.util.HashMap;
+import java.util.Map;
 
 public class InternshipController
 {
@@ -49,11 +49,13 @@ public class InternshipController
 
     private ArrayList<InternModel> internArr;
     private ArrayList<TraineeModel> traineeList;
+    private Map<Integer, InternModel> internToTraineeMap;
 
     @javafx.fxml.FXML
     public void initialize() {
         internArr = new ArrayList<>();
         traineeList = new ArrayList<>();
+        internToTraineeMap = new HashMap<>();
 
         traineeIDColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         traineeUniNameColumn.setCellValueFactory(new PropertyValueFactory<>("uniName"));
@@ -145,9 +147,12 @@ public class InternshipController
             internIDCombobox.getItems().add(String.valueOf(intern.getId()));
         }
 
-        selectUniveristySearchCombobox.getItems().addAll("NSU", "Brac", "IUB", "AIUB", "BUBT", "UIU");
-        selectPaymentStatusCombobox.getItems().addAll("Paid", "Unpaid");
+        for(InternModel intern : internArr) {
+            internToTraineeMap.put(intern.getId(), intern);
+        }
 
+        selectPaymentStatusCombobox.getItems().addAll("Paid", "Unpaid");
+        selectUniveristySearchCombobox.getItems().addAll("NSU", "Brac", "IUB", "AIUB", "BUBT", "UIU");
     }
 
     @javafx.fxml.FXML
@@ -213,24 +218,24 @@ public class InternshipController
 
         for(TraineeModel traineeModel: traineeList) {
             int interID = traineeModel.getId();
-            String uniName = "";
-            String paymentStatus = "";
+            InternModel internModel = internToTraineeMap.get(interID);
+
+//            String uniName = "";
+//            String paymentStatus = "";
             int noOfTrainings = traineeModel.getTrainingTitles().size();
             String trainingTitles = traineeModel.getTrainingTitles().toString();
 
-            System.out.println(interID);
-
-            for(InternModel internModel: internArr) {
-                if(internModel.getId() == interID) {
-                    uniName = internModel.getUniName();
-                    paymentStatus = internModel.getPaymentStatus();
-                }
-            }
+//            for(InternModel internModel: internArr) {
+//                if(internModel.getId() == interID) {
+//                    uniName = internModel.getUniName();
+//                    paymentStatus = internModel.getPaymentStatus();
+//                }
+//            }
 
             TraineeTableInfoModel trainee = new TraineeTableInfoModel(
                     interID,
-                    uniName,
-                    paymentStatus,
+                    internModel.getUniName(),
+                    internModel.getPaymentStatus(),
                     trainingTitles,
                     noOfTrainings
             );
